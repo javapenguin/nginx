@@ -35,4 +35,6 @@ RUN apt-get update \
     && make \
     && make install
 
-ENTRYPOINT [ "/usr/sbin/nginx", "-g", "'daemon off;'" ]
+COPY app.sh /app.sh
+
+ENTRYPOINT [ "bash", "-c", "/app.sh" ]
