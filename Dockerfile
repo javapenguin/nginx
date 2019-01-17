@@ -16,6 +16,7 @@ RUN apt-get update \
     && git clone https://bitbucket.org/nginx-goodies/nginx-sticky-module-ng.git \
     && git clone https://github.com/kvspb/nginx-auth-ldap.git \
     && git clone https://github.com/openresty/headers-more-nginx-module.git \
+    && git clone https://github.com/vozlt/nginx-module-vts.git \
     && wget http://nginx.org/download/nginx-1.15.7.tar.gz \
     && tar -zxvf nginx-1.15.7.tar.gz \
     && cd nginx-1.15.7 \
@@ -32,6 +33,7 @@ RUN apt-get update \
         --add-module=/working/nginx-sticky-module-ng \
         --add-module=/working/nginx-auth-ldap \
         --add-module=/working/headers-more-nginx-module \
+        --add-module=/working/nginx-module-vts \
     && make \
     && make install
 
